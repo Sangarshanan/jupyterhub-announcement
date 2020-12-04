@@ -18,7 +18,13 @@ The [html-sanitizer](https://pypi.org/project/html-sanitizer/) Python package is
 
 ## Installation
 
+To install the original project
+
     pip install git+https://github.com/rcthomas/jupyterhub-announcement.git
+    
+This fork blocks unauthenticated users from performing GET requests (Strangers cannot see the announcements)
+
+    pip install git+https://github.com/sangarshanan/jupyterhub-announcement.git
 
 ## How to Configure It
 
