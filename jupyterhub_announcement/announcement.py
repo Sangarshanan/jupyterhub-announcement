@@ -131,7 +131,7 @@ class AnnouncementViewHandler(AnnouncementHandler):
         self.env = Environment(loader=self.loader)
         self.template = self.env.get_template("index.html")
 
-
+    @web.authenticated
     def get(self):
         user = self.get_current_user()
         prefix = self.hub_auth.hub_prefix
@@ -153,7 +153,7 @@ class AnnouncementLatestHandler(AnnouncementHandler):
         super().initialize(queue)
         self.allow_origin = allow_origin
 
-
+    @web.authenticated
     def get(self):
         latest = {"announcement": ""}
         if self.queue.announcements:
