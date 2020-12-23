@@ -39,6 +39,19 @@ Here's an example configuration for a hub-managed service you can place in a Jup
         }
     ]
 
+
+Here's the config if you set it up on Kubernetes as a hub managed service 
+
+      c.JupyterHub.services = [
+          {
+              'name': 'announcement',
+              'url': f"http://{os.environ['HUB_SERVICE_HOST']}:8888",
+              'command': ["python3", "-m", "jupyterhub_announcement"]
+          }
+      ]
+
+
+
 Here's the config if you set it up as an external service, say, in another Docker container called `announcement`:
 
     import os
